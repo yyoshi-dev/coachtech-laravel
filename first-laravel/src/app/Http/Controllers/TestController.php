@@ -9,6 +9,9 @@ class TestController extends Controller
     //
     public function index()
     {
-        return view('index');
+        $item = [
+            'content' => 'パラメータを渡す',
+        ];
+        return view('index', $item);
     }
 }
