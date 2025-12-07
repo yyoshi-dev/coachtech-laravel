@@ -23,3 +23,8 @@ use App\Http\Controllers\TestController;
 
 // 1-9 ブラウザに画面を表示しよう: view編
 Route::get('/', [TestController::class, 'index']);
+
+// 1-9 継承の練習
+Route::get('/practice/', function () {
+    return view('practice_index');
+});
