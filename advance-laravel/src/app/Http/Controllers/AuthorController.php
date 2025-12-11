@@ -72,4 +72,13 @@ class AuthorController extends Controller
         ];
         return view('find', $param);
     }
+
+    // bindアクション
+    public function bind(Author $author)
+    {
+        $data = [
+            'item' => $author,
+        ];
+        return view('author.binds', $data);
+    }
 }
