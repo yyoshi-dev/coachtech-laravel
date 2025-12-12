@@ -57,4 +57,28 @@ class AuthorController extends Controller
         Author::find($request->id)->delete();
         return redirect('/');
     }
+
+    // name属性を利用した検索
+    public function find()
+    {
+        return view('find', ['input' => '']);
+    }
+    public function search(Request $request)
+    {
+        $item = Author::where('name', 'LIKE', "%{$request->input}%")->first();
+        $param = [
+            'input' => $request->input,
+            'item' => $item
+        ];
+        return view('find', $param);
+    }
+
+    // bindアクション
+    public function bind(Author $author)
+    {
+        $data = [
+            'item' => $author,
+        ];
+        return view('author.binds', $data);
+    }
 }
