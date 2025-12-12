@@ -39,4 +39,10 @@ class AuthorRequest extends FormRequest
             'nationality.required' => '国籍を入力してください'
         ];
     }
+
+    // リダイレクト先の指定
+    protected function getRedirectUrl()
+    {
+        return 'verror';
+    }
 }

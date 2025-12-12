@@ -83,4 +83,10 @@ class AuthorController extends Controller
         ];
         return view('author.binds', $data);
     }
+
+    // エラー時のリダイレクト先
+    public function verror()
+    {
+        return view('verror');
+    }
 }
