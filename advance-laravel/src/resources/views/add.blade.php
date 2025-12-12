@@ -28,17 +28,49 @@
 @section('title', 'add.blade.php')
 
 @section('content')
+<!-- エラーメッセージを箇条書きで表示
+@if (count($errors) >0)
+<ul>
+    @foreach ($errors->all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+</ul>
+@endif -->
+@if (count($errors) > 0)
+<p>入力に問題があります</p>
+@endif
 <form action="/add" method="post">
     <table>
         @csrf
+        @error('name')
+        <tr>
+            <th style="background-color: red;">ERROR</th>
+            <!-- <td>{{$errors->first('name')}}</td> -->
+            <td>{{$message}}</td>
+        </tr>
+        @enderror
         <tr>
             <th>name</th>
             <td><input type="text" name="name"></td>
         </tr>
+        @error('age')
+        <tr>
+            <th style="background-color: red;">ERROR</th>
+            <!-- <td>{{$errors->first('age')}}</td> -->
+            <td>{{$message}}</td>
+        </tr>
+        @enderror
         <tr>
             <th>age</th>
             <td><input type="text" name="age"></td>
         </tr>
+        @error('nationality')
+        <tr>
+            <th style="background-color: red;">ERROR</th>
+            <!-- <td>{{$errors->first('nationality')}}</td> -->
+            <td>{{$message}}</td>
+        </tr>
+        @enderror
         <tr>
             <th>nationality</th>
             <td><input type="text" name="nationality"></td>
