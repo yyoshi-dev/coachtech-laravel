@@ -20,6 +20,8 @@ Route::get('/author/{author}', [AuthorController::class, 'bind']);
 
 Route::get('/verror', [AuthorController::class, 'verror']);
 
+Route::get('/relation', [AuthorController::class, 'relate']);
+
 // BookController関連
 Route::prefix('book')->group(function () {
     Route::get('/', [BookController::class, 'index']);
