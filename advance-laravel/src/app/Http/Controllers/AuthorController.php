@@ -12,7 +12,9 @@ class AuthorController extends Controller
     // 取得データ一覧ページの表示
     public function index()
     {
-        $authors = Author::all();
+        // $authors = Author::all();
+        // ページネーションの追加
+        $authors = Author::Paginate(4);
         return view('index', ['authors' => $authors]);
     }
 
