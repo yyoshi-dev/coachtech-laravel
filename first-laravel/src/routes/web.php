@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 // use App\Http\Controllers\HelloController;
 
+use App\Http\Controllers\MiddlewareController;
+
 // 1-7, 1-8 ブラウザに画面を表示しよう:controller編及びroute編
 // Route::get('/test', [TestController::class, 'index']);
 // Route::get('/test/{text}', [TestController::class, 'index']);
@@ -22,4 +24,11 @@ use App\Http\Controllers\TestController;
 // });
 
 // 1-9 ブラウザに画面を表示しよう: view編
-Route::get('/', [TestController::class, 'index']);
+// Route::get('/', [TestController::class, 'index']);
+
+// 3-1
+Route::get('/', [TestController::class], 'index');
+Route::post('/', [TestController::class], 'post');
+Route::get('/middleware', [MiddlewareController::class, 'index']);
+// Route::post('/middleware', [MiddlewareController::class, 'post'])->middleware('first');
+Route::post('/middleware', [MiddlewareController::class, 'post']);
