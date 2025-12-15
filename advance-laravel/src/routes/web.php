@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\SessionController;
 
 // AuthorController関連
 Route::get('/', [AuthorController::class, 'index']);
@@ -28,3 +29,7 @@ Route::prefix('book')->group(function () {
     Route::get('/add', [BookController::class, 'add']);
     Route::post('/add', [BookController::class, 'create']);
 });
+
+// SessionController館れ
+Route::get('/session', [SessionController::class, 'getSes']);
+Route::post('/session', [SessionController::class, 'postSes']);
