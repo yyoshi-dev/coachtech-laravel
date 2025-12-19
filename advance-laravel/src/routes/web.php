@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\SessionController;
 use App\Models\Person;
+use App\Models\Product;
 
 // AuthorController関連
 Route::get('/', [AuthorController::class, 'index']);
@@ -53,4 +54,12 @@ Route::get('/softdelete/store', function () {
 Route::get('/softdelete/absolute', function () {
     $result = Person::onlyTrashed()->forceDelete();
     echo $result;
+});
+
+// Product関連
+Route::get('uuid', function () {
+    $products = Product::all();
+    foreach ($products as $product) {
+        echo $product . '<br>';
+    }
 });

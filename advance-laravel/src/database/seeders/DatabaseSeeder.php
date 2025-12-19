@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Author;
 use App\Models\Person;
+use App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
 
         // モデルファクトリを利用した書き方
         // Author::factory(10)->create();
-        Person::factory(10)->create();
+        // Person::factory(10)->create();
+        Product::factory(10)->create();
     }
 }
