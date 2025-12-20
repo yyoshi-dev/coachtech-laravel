@@ -20,7 +20,7 @@
     </header>
 
     <main>
-        @yield('contact')
+        @yield('content')
     </main>
 </body>
 

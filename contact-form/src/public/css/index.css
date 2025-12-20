@@ -1,7 +1,7 @@
 .contact-form__content {
     margin: 0 auto;
-    width: 70%;
-    text-align: center;
+    padding: 30px 15px;
+    max-width: 1230px;
 }
 
 .contact-form__heading {
@@ -36,7 +36,7 @@
 }
 
 .form__input--text input,
-.form__input-textarea textarea {
+.form__input--textarea textarea {
     padding: 10px;
     width: 600px;
     border: 1px solid #ddd;
@@ -44,11 +44,11 @@
     appearance: none;
 }
 
-.form__input-text input {
+.form__input--text input {
     height: 40px;
 }
 
-.form__input--textarea {
+.form__input--textarea textarea {
     height: 180px;
 }
 
@@ -58,7 +58,7 @@
 
 .form__button-submit {
     padding: 10px;
-    width: 30px;
+    width: 30%;
     height: 50px;
     border: none;
     border-radius: 3px;

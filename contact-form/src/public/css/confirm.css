@@ -30,6 +30,11 @@
     font-weight: bold;
 }
 
+.confirm-table__text {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
 .confirm-table__text input {
     width: 100%;
     outline: none;
