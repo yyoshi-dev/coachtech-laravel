@@ -12,11 +12,11 @@
     ```
 3. コンテナを起動
     ```bash
-    docker-compose up -d --build
+    docker compose up -d --build
     ```
 4. PHPコンテナに接続
     ```bash
-    docker-compose exec php bash
+    docker compose exec php bash
     ```
 5. コンテナ内で依存関係をインストール
     ```bash

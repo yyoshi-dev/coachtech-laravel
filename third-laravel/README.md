@@ -20,11 +20,11 @@
     ```
 3. コンテナを起動
     ```bash
-    docker-compose up -d --build
+    docker compose up -d --build
     ```
 4. PHPコンテナに入る
     ```bash
-    docker-compose exec php bash
+    docker compose exec php bash
     ```
 5. 依存関係をインストール
     ```bash
@@ -70,8 +70,8 @@
     GID=1000
     ```
 
-3. `docker-compose up -d —build`で起動
-4. `docker-compose exec php bash`でPHPコンテナにアクセス
+3. `docker compose up -d —build`で起動
+4. `docker compose exec php bash`でPHPコンテナにアクセス
 5. `composer create-project "laravel/laravel=^12.0" . --prefer-dist`でLaravelプロジェクトを作成
 6. 時間設定をUTCから日本時間へ変更
     - `./src/config/app.php`ファイルを開く
