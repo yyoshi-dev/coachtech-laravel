@@ -23,10 +23,14 @@
 }
 
 .message__error {
-    padding: 10px 30px;
+    padding: 10px 0;
     background: #f8d7da;
     color: #842029;
     border-color: #f5c2c7;
+}
+
+.message__error ul {
+    margin: 0;
 }
 
 /* 教科書の回答 */
