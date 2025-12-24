@@ -20,17 +20,21 @@
     </header>
 
     <div class="message">
-        @if (session('success'))
+        @if (session('message'))
         <div class="message__success">
-            {{ session('success') }}
+            {{ session('message') }}
         </div>
         @endif
 
-        @error('content')
+        @if ($errors->any())
         <div class="message__error">
-            {{ $message }}
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
         </div>
-        @enderror
+        @endif
     </div>
 
     <main>
