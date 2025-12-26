@@ -32,27 +32,3 @@
 .message__error ul {
     margin: 0;
 }
-
-/* 教科書の回答 */
-/* .todo__item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.todo__update-form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-}
-
-.todo__item-input {
-    flex: 1;
-    height: 40px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-} */

@@ -8,9 +8,19 @@ use App\Models\Todo;
 
 class TodoController extends Controller
 {
-    public function index()
+    // public function index()
+    // {
+    //     $todos = Todo::all();
+    //     return view('index', compact('todos'));
+    // }
+    // 教科書 (テーブル利用)とリスト利用の比較版
+    public function index(Request $request)
     {
-        $todos = Todo::all();
+        $todos = Todo::all(); // view パラメータで切り替え
+        $viewType = $request->query('view', 'ul'); // デフォルトは ul
+        if ($viewType === 'table') {
+            return view('index_textbook', compact('todos'));
+        }
         return view('index', compact('todos'));
     }
 
