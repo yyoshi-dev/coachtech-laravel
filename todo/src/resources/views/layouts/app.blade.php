@@ -13,29 +13,20 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a href="/" class="header__logo">
-                Todo
-            </a>
+            <div class="header__menu">
+                <a href="/" class="header__logo">Todo</a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="/categories" class="header__nav-link">
+                                カテゴリ一覧
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-
-    <div class="message">
-        @if (session('message'))
-        <div class="message__success">
-            {{ session('message') }}
-        </div>
-        @endif
-
-        @if ($errors->any())
-        <div class="message__error">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-    </div>
 
     <main>
         @yield('content')
