@@ -5,6 +5,26 @@
 @endsection
 
 @section('content')
+{{-- メッセージの表示 --}}
+<div class="message">
+    @if (session('message'))
+    <div class="message__success">
+        {{ session('message') }}
+    </div>
+    @endif
+
+    @if ($errors->any())
+    <div class="message__error">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+</div>
+
+{{-- todoの内容の表示 --}}
 <div class="todo">
     <form action="/todos" method="post" class="todo__form">
         @csrf

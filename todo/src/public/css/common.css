@@ -8,6 +8,12 @@
     max-width: 1230px;
 }
 
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .header__logo {
     color: #fff;
     text-decoration: none;
@@ -15,20 +21,13 @@
     font-size: 24px;
 }
 
-.message__success {
-    padding: 10px 30px;
-    background: #d1e7dd;
-    color: #0f5132;
-    border-color: #badbcc;
-}
+.header__nav {}
 
-.message__error {
-    padding: 10px 0;
-    background: #f8d7da;
-    color: #842029;
-    border-color: #f5c2c7;
-}
+.header__nav-list {}
 
-.message__error ul {
-    margin: 0;
+.header__nav-item {}
+
+.header__nav-link {
+    color: #fff;
+    text-decoration: none;
 }
