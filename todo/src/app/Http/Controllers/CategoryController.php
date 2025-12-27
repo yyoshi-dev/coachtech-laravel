@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -16,10 +17,17 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $categories = Category::all();
-        $viewType = $request->query('view', 'ul'); // デフォルトは ul
-        if ($viewType === 'table') {
+        $viewType = $request->query('view', 'self');
+        if ($viewType === 'textbook') {
             return view('category_textbook', compact('categories'));
         }
         return view('category', compact('categories'));
+    }
+
+    public function store(CategoryRequest $request)
+    {
+        $category = $request->only(['name']);
+        Category::create($category);
+        return redirect('/categories')->with('message', 'カテゴリを作成しました');
     }
 }
