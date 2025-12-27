@@ -34,8 +34,10 @@
         @csrf
         <div class="todo__form-item">
             <input type="text" name="content" value="{{old('content')}}"  class="todo__form-item-input">
-            <select name="category_id" id="" class="todo__form-category-select">
-                <option value="">カテゴリ</option>
+            <select name="category_id" class="todo__form-category-select">
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
             </select>
         </div>
         <div class="todo__form-button">
@@ -47,10 +49,13 @@
         <h2>Todo検索</h2>
     </div>
     <form action="/todos/search" method="get" class="todo__search">
+        @csrf
         <div class="todo__search-item">
-            <input type="text" name="keyword" class="todo__search-item-input">
-            <select name="category_id" id="" class="todo__search-category-select">
-                <option value="">カテゴリ</option>
+            <input type="text" name="keyword" value="{{old('keyword')}}" class="todo__search-item-input">
+            <select name="category_id" class="todo__search-category-select">
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
             </select>
         </div>
         <div class="todo__search-button">
@@ -73,7 +78,7 @@
                     @csrf
                     <input type="text" name="content" value="{{$todo->content}}" class="todo__item-input">
                     <input type="hidden" name="id" value="{{$todo->id}}">
-                    <span class="todo__item-category">{{ $todo->category->name }}</span> {{-- 後で修正--}}
+                    <span class="todo__item-category">{{ $todo->category->name }}</span>
                     <button type="submit" class="todo__item-update">更新</button>
                 </form>
                 <form action="/todos/delete" method="post" class="todo__delete-form">
