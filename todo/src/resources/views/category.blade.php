@@ -44,12 +44,12 @@
         </div>
         <ul class="category__items">
             {{-- test用 --}}
-            @php
+            {{-- @php
             $categories= [
                 (object)['id' => 1, 'name'=> 'category1'],
                 (object)['id' => 2, 'name'=> 'category2']
             ];
-            @endphp
+            @endphp --}}
             @foreach ($categories as $category)
             <li class="category__item">
                 <form action="/categories/update" method="post" class="category__update-form">
